@@ -25,6 +25,8 @@
         });
     },
 
+
+
     // CollapseHide
     KerriApp.prototype.initCollapseHide = function() {
         $(document).on('click', '.navbar-collapse.show', function(e) {
@@ -139,7 +141,7 @@
             } else {
                 $('.back_top').fadeOut();
             }
-        }); 
+        });
         $('.back_top').click(function(){
             $("html, body").animate({ scrollTop: 0 }, 1000);
             return false;

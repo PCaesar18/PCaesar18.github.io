@@ -10,11 +10,9 @@
     <meta name="Caesar" content="Website" />
 
     <link rel="shortcut icon" href="../images/favicon2.ico" type="image/x-icon">
-
-    <!--Bootstrap Css-->
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
-
-    <!-- Custom style Css -->
+    <link href="../css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../css/mobiriseicons.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/color/default.css" rel="stylesheet" id="option-color">
 
@@ -23,25 +21,43 @@
       body {
           font-family: 'Nunito', sans-serif;
           overflow-x: hidden;
+          background-color: #ffff;
+          text-align: center;
+
       }
 
       h1,
       h2,
       h3,
       h4,
-      h5,
+      h5{
+          font-family: 'Verdana', sans-serif;
+          color: #E6895E;
+          padding-top: 50px;
+          /* text-align: left; */
+
+      }
       h6 {
           font-family: 'Montserrat', sans-serif;
-      }
+          color: black;
 
+      }
 
       .blog_header-bg-img{
         background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url("../images/blog/blog-1.jpeg");
         height: 550px;
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         position: relative;
+      }
+
+      .blog_text{
+        padding-top: 30px;
+        padding-left: 20%;
+        padding-right: 20%;
+        text-align: left;
+        font-size: 20px;
       }
 
     </style>
@@ -113,11 +129,54 @@
     </section>
 <!-- END Header blog-->
 
+<!-- Start Text blog-->
+<section>
+    <div class="container">
+      <h5>5 December 2021</h5>
+        <div class="blog_text">
+          <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</p>
 
-    Testing relative href links output
+          <p> To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+
+          <p> On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foreseeBut I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.</p>
+
+          <p> Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foreseeBut I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur </p>
+      </div>
+    </div>
+</section>
+<!-- End Text blog-->
+
+<!--START FOOTER-->
+<footer class="footer bg-light">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-12">
+                <div class="text-center text-white footer-alt">
+                    <ul class="list-unstyled list-inline mb-3">
+                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-facebook text-muted"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-linkedin text-muted"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-pinterest text-muted"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-twitter text-muted"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--END FOOTER-->
+
+<!-- Back To Top does not seem to be working --> 
+<a href="#" class="back_top"> <i class="mdi mdi-chevron-up"> </i> </a>
 
 
-  </body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+<script src="../js/custom.js"></script>
+
+
+</body>
 
 
 
