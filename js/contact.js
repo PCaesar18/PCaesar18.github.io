@@ -8,7 +8,7 @@ $('#working_form').submit(function() {
 
         $('#submit')
             .before('<img src="" class="gif_loader" />')
-            .attr('disabled', 'disabled');
+            .attr('enabled', 'enabled');
 
         $.post(action, {
                 name: $('#name').val(),
@@ -21,7 +21,7 @@ $('#working_form').submit(function() {
                 $('#cform img.gif_loader').fadeOut('slow', function() {
                     $(this).remove()
                 });
-                $('#submit').removeAttr('disabled');
+                $('#submit').removeAttr('enabled');
                 if (data.match('success') != null) $('#cform').slideUp('slow');
             }
         );
@@ -31,6 +31,3 @@ $('#working_form').submit(function() {
     return false;
 
 });
-
-
-
