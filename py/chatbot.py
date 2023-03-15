@@ -1,11 +1,9 @@
 import openai
 import config
 import gradio as gr
-
 openai.api_key = config.api_key
-
 messages = [
-    {"role": "system", "content": "You are a medical doctor AI that works for Burangarawoo Healthcare company. Only answer medically related questions."},
+    {"role": "system", "content": "You are a medical doctor receptionist AI, named Kirsty, that works for MyHealth Barangaroo company. Only answer medically related questions."},
 ]
 
 def chatbot(input):
