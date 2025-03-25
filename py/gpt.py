@@ -31,20 +31,3 @@ def chatbot(request):
     # If the request is not a POST, render the chatbot template
     return render(request, 'chatbot.html')
 
-
-
-
-# import os
-# import openai
-#
-# openai.api_key = os.getenv("OPENAI_API_KEY")
-#
-# response = openai.Completion.create(
-#   model="code-davinci-002",
-#   prompt="\"\"\"\n1. Create a list of first names\n2. Create a list of last names\n3. Combine them randomly into a list of 100 full names\n\"\"\"\n\nimport random\n\nfirst_names = ['John', 'Jane', 'Corey', 'Travis', 'Dave', 'Kurt', 'Neil', 'Sam', 'Steve', 'Tom', 'James', 'Robert', 'Michael', 'Charles', 'Joe', 'Mary', 'Maggie', 'Nicole', 'Patricia', 'Linda', 'Barbara', 'Elizabeth', 'Laura', 'Jennifer', 'Maria']\n\nlast",
-#   temperature=0,
-#   max_tokens=300,
-#   top_p=1,
-#   frequency_penalty=0,
-#   presence_penalty=0
-# )
