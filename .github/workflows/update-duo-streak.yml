@@ -1,0 +1,41 @@
+name: Update Duolingo streak
+
+on:
+  schedule:
+    - cron: "0 5 * * *"   # once per day at 05:00 UTC
+  workflow_dispatch:       # lets you run it manually from the Actions tab
+
+jobs:
+  update-streak:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install git+https://github.com/humbertodias/python-api-duolingo.git
+
+      - name: Update streak file
+        env:
+          DUO_USER: ${{ secrets.DUO_USER }}
+          DUO_PASS: ${{ secrets.DUO_PASS }}
+        run: python update_streak.py
+
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add duo-streak.json
+            git commit -m "Update Duolingo streak"
+            git push
+          else
+            echo "No changes to commit"
+          fi
