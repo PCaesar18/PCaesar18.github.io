@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install git+https://github.com/humbertodias/python-api-duolingo.git
+          pip install requests duolingo-api==0.5.4
 
       - name: Update streak file
         env:
