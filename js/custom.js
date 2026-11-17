@@ -36,22 +36,56 @@
         });
     },
 
-    //Smooth
+    //Smooth. Only in-page hash links. Page links such as Shop must navigate.
     KerriApp.prototype.initSmoothLink = function() {
         $('.navbar-nav a, .scroll_down a').on('click', function(event) {
-            var $anchor = $(this);
+            var href = $(this).attr('href');
+            if (!href || href.charAt(0) !== '#' || href.length < 2) {
+                return;
+            }
+            var $target = $(href);
+            if (!$target.length) {
+                return;
+            }
             $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top - 0
+                scrollTop: $target.offset().top - 0
             }, 1500, 'easeInOutExpo');
             event.preventDefault();
         });
     },
 
-    //Scrollspy
+    //Scrollspy. The plugin treats every #navbarCollapse href as a jQuery
+    //selector, so park non-hash links (Shop, blog cross-page links) for the
+    //call and put them back immediately after. They are not removed.
     KerriApp.prototype.initScrollspy = function() {
-        $("#navbarCollapse").scrollspy({
-            offset:20
+        var $nav = $("#navbarCollapse");
+        if (!$nav.length || typeof $.fn.scrollspy !== "function") {
+            return;
+        }
+
+        var parked = [];
+        $nav.find("a").each(function() {
+            var href = this.getAttribute("href") || "";
+            if (href.charAt(0) === "#") {
+                return;
+            }
+            var marker = document.createComment("nav-external");
+            this.parentNode.insertBefore(marker, this);
+            parked.push({ node: this, marker: marker });
+            this.parentNode.removeChild(this);
         });
+
+        try {
+            $nav.scrollspy({
+                offset: 20
+            });
+        } finally {
+            for (var i = 0; i < parked.length; i++) {
+                var item = parked[i];
+                item.marker.parentNode.insertBefore(item.node, item.marker.nextSibling);
+                item.marker.parentNode.removeChild(item.marker);
+            }
+        }
     },
 
     //Typed
